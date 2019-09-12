@@ -48,6 +48,23 @@ Put the downloaded file 'GoogleService-Info.plist' in the Cordova project root f
 :warning: It's highly recommended to use REST API to send push notifications because Firebase console does not have all the functionalities. **Pay attention to the payload example in order to use the plugin properly**.  
 You can also test your notifications with the free testing server: https://cordova-plugin-fcm.appspot.com
 
+#### Checking for permissions (iOS only) - added in 3.0.1
+Copied from https://github.com/arnesson/cordova-plugin-firebase/blob/master/src/ios/FirebasePlugin.m#L68-L85
+```javascript
+//FCMPlugin.hasPermission( data );
+FCMPlugin.hasPermission(function(data){
+    alert( data.isEnabled );
+});
+```
+
+```javascript
+//FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
+//Note that this callback will be fired everytime a new token is generated, including the first time.
+FCMPlugin.onTokenRefresh(function(token){
+    alert( token );
+});
+```
+
 #### Receiving Token Refresh
 
 ```javascript
