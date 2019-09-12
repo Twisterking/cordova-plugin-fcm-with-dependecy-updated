@@ -4,6 +4,10 @@ function FCMPlugin() {
 	console.log("FCMPlugin.js: is created");
 }
 
+// iOS - CHECK FOR PERMISSION
+FCMPlugin.prototype.hasPermission = function( success, error ){
+  exec(success, error, "FCMPlugin", 'hasPermission', []);
+}
 // SUBSCRIBE TO TOPIC //
 FCMPlugin.prototype.subscribeToTopic = function( topic, success, error ){
 	exec(success, error, "FCMPlugin", 'subscribeToTopic', [topic]);
