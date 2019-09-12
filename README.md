@@ -50,18 +50,10 @@ You can also test your notifications with the free testing server: https://cordo
 
 #### Checking for permissions (iOS only) - added in 3.0.1
 Copied from https://github.com/arnesson/cordova-plugin-firebase/blob/master/src/ios/FirebasePlugin.m#L68-L85
-```javascript
-//FCMPlugin.hasPermission( data );
-FCMPlugin.hasPermission(function(data){
-    alert( data.isEnabled );
-});
-```
 
 ```javascript
-//FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
-//Note that this callback will be fired everytime a new token is generated, including the first time.
-FCMPlugin.onTokenRefresh(function(token){
-    alert( token );
+FCMPlugin.hasPermission(function(data){
+    alert( data.isEnabled );
 });
 ```
 
